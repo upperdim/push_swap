@@ -3,3 +3,7 @@
 a.out
 *.o
 demo.c
+*.a
+ft_printf/libftprintf.a
+ft_printf/libft/libft.a
+push_swap
