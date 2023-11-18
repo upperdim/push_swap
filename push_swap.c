@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 05:12:06 by tunsal            #+#    #+#             */
-/*   Updated: 2023/11/18 07:09:37 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/11/18 07:12:38 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ int	init_stacks(t_stack *a, t_stack *b, int argc, char *argv[])
 	while (i < argc)
 	{
 		if (!str_is_numeric(argv[i]))
+		{
+			ft_putstr_fd("Error\n", STDERR_FD);
 			return (-1);
+		}
 		stack_push(b, ft_atoi(argv[i]));
 		++i;
 	}

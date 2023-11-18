@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 13:09:04 by tunsal            #+#    #+#             */
-/*   Updated: 2023/11/18 06:08:03 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/11/18 07:13:05 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # ifndef STACK_SIZE
 #  define STACK_SIZE 100
 # endif
+
+# define STDERR_FD 2
 
 typedef struct stack {
 	int	top;
