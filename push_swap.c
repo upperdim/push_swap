@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 05:12:06 by tunsal            #+#    #+#             */
-/*   Updated: 2023/11/18 03:49:02 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/11/18 06:00:27 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,5 @@ int	main(int argc, char *argv[])
 		pa(&a, &b);
 		++i;
 	}
-	
-	// Initially contains random amount if numbers
-	
-	// Initially empty
-	
 
-	// Goal: = 
 }
