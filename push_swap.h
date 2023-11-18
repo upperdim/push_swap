@@ -6,23 +6,25 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 13:09:04 by tunsal            #+#    #+#             */
-/*   Updated: 2023/11/18 02:24:25 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/11/18 03:46:16 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include "libft/libft.h"
+#include "ft_printf/ft_printf.h"
 
 # ifndef STACK_SIZE
 #  define STACK_SIZE 100
 # endif
 
-typedef struct t_stack {
+typedef struct stack {
 	int	top;
 	int	data[STACK_SIZE];
 }	t_stack;
+
+int		str_is_numeric(char *s);
 
 int		stack_pop(t_stack *s);
 void	stack_push(t_stack *s, int new);

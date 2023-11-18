@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 05:12:06 by tunsal            #+#    #+#             */
-/*   Updated: 2023/11/18 02:44:23 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/11/18 03:49:02 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,22 @@
 
 int	main(int argc, char *argv[])
 {
-	int	a[STACK_SIZE];
-	int	b[STACK_SIZE];
-	size_t	i;
+	t_stack	a;
+	t_stack	b;
+	int	i;
 
 	i = 1;
 	while (i <= argc)
 	{
-		if (!is_numeric(argv[i]))
+		if (!str_is_numeric(argv[i]))
 			return (1);
-		stack_push(b, atoi(argv[i]));
+		stack_push(&b, atoi(argv[i]));
 		++i;
 	}
 	i = 1;
 	while (i <= argc)
 	{
-		pa(a, b);
+		pa(&a, &b);
 		++i;
 	}
 	

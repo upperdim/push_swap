@@ -6,11 +6,11 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 15:13:17 by tunsal            #+#    #+#             */
-/*   Updated: 2023/11/15 15:13:43 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/11/18 03:49:27 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 /*
 	Shift all elements of the stack up by 1.
