@@ -7,3 +7,6 @@ demo.c
 ft_printf/libftprintf.a
 ft_printf/libft/libft.a
 push_swap
+checker_Mac
+pro_checker
+push_swap_test.sh
