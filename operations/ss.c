@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 15:22:53 by tunsal            #+#    #+#             */
-/*   Updated: 2023/11/18 02:08:23 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/11/21 08:35:22 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,4 +16,5 @@ void	ss(t_stack *a, t_stack *b)
 {
 	stack_swap(a);
 	stack_swap(b);
+	ft_printf("ss\n");
 }

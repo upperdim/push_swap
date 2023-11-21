@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 15:23:08 by tunsal            #+#    #+#             */
-/*   Updated: 2023/11/21 06:07:29 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/11/21 08:34:12 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,4 +18,5 @@ void	pb(t_stack *a, t_stack *b)
 
 	b_top = stack_pop(b);
 	stack_push(a, b_top);
+	ft_printf("pb\n");
 }
