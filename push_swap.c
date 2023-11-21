@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 05:12:06 by tunsal            #+#    #+#             */
-/*   Updated: 2023/11/21 09:18:40 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/11/21 09:24:43 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,25 @@ void	init_stacks(t_stack *a, t_stack *b, int argc, char *argv[])
 	while (i < argc)
 	{
 		stack_push(a, stack_pop(b));
+		++i;
+	}
+}
+
+void check_duplicates(t_stack *s)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i <= s->top)
+	{
+		j = i + 1;
+		while (j < s->top)
+		{
+			if (s->data[i] == s->data[j])
+				exit_error();
+			++j;
+		}
 		++i;
 	}
 }
@@ -99,6 +118,7 @@ int	main(int argc, char *argv[])
 	t_stack	b;
 
 	init_stacks(&a, &b, argc, argv);
+	check_duplicates(&a);
 
 	stack_print(&a, "a");
 	stack_print(&b, "b");
