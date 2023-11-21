@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 13:09:04 by tunsal            #+#    #+#             */
-/*   Updated: 2023/11/21 01:38:12 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/11/21 07:23:58 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "ft_printf/ft_printf.h"
 
 # ifndef STACK_SIZE
-#  define STACK_SIZE 100
+#  define STACK_SIZE 10000
 # endif
 
 # define STDERR_FD 2
