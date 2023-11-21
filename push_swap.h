@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 13:09:04 by tunsal            #+#    #+#             */
-/*   Updated: 2023/11/18 07:13:05 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/11/21 01:38:12 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct stack {
 }	t_stack;
 
 int		str_is_numeric(char *s);
-void	stack_print(t_stack *s, char *name, int print_name);
+void	stack_print(t_stack *s, char *name);
 
 int		stack_pop(t_stack *s);
 void	stack_push(t_stack *s, int new);
