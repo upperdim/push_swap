@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 13:09:04 by tunsal            #+#    #+#             */
-/*   Updated: 2023/11/21 08:24:54 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/11/21 09:16:39 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	stack_print(t_stack *s, char *name);
 int		stack_get_smallest_elem_idx(t_stack *s);
 int		stack_get_largest_elem_idx(t_stack *s);
 int		stack_is_sorted_asc(t_stack *s);
+void	exit_error();
 
 int		stack_pop(t_stack *s);
 void	stack_push(t_stack *s, int new);

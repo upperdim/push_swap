@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_push.c                                       :+:      :+:    :+:   */
+/*   exit_error.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/15 15:13:24 by tunsal            #+#    #+#             */
-/*   Updated: 2023/11/21 09:08:49 by tunsal           ###   ########.fr       */
+/*   Created: 2023/11/21 09:13:20 by tunsal            #+#    #+#             */
+/*   Updated: 2023/11/21 09:14:24 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-/* Push element `new` to the top of stack `s`. */
-void	stack_push(t_stack *s, int new)
+void	exit_error()
 {
-	if (s == NULL)
-	{
-		exit_error();
-	}
-	s->data[++s->top] = new;
+	ft_putstr_fd("Error\n", STDERR_FD);
+	exit(EXIT_FAILURE);
 }
