@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 05:12:06 by tunsal            #+#    #+#             */
-/*   Updated: 2023/11/21 09:27:58 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/12/13 07:48:48 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	mysort(t_stack *a, t_stack *b)
 				ra(a);
 				++i;
 			}
-			pa(a, b);
+			pb(a, b);
 		}
 		else
 		{
@@ -80,11 +80,11 @@ void	mysort(t_stack *a, t_stack *b)
 				rra(a);
 				--i;
 			}
-			pa(a, b);
+			pb(a, b);
 		}
 	}
 	while (b->top > -1)
-		pb(a, b);
+		pa(a, b);
 }
 
 /* Sorts stacks with 3 elements. */
@@ -120,11 +120,9 @@ int	main(int argc, char *argv[])
 
 	init_stacks(&a, &b, argc, argv);
 
-	stack_print(&a, "a");
-	stack_print(&b, "b");
-	
-	
-	
+	// stack_print(&a, "a");
+	// stack_print(&b, "b");
+
 	if (stack_is_sorted_asc(&a))
 		return (0);
 	if (a.top == 1)
@@ -133,10 +131,8 @@ int	main(int argc, char *argv[])
 		sort3(&a);
 	else
 		mysort(&a, &b);
-	
-	
-	
-	stack_print(&a, "a");
-	stack_print(&b, "b");
+
+	// stack_print(&a, "a");
+	// stack_print(&b, "b");
 	return (0);
 }
