@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 15:23:11 by tunsal            #+#    #+#             */
-/*   Updated: 2023/11/21 08:37:12 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/12/13 07:38:18 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	pa(t_stack *a, t_stack *b)
 {
-	int	a_top;
+	int	b_top;
 
-	a_top = stack_pop(a);
-	stack_push(b, a_top);
+	b_top = stack_pop(b);
+	stack_push(a, b_top);
 	ft_printf("pa\n");
 }
