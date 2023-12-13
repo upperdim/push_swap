@@ -6,13 +6,13 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 05:12:06 by tunsal            #+#    #+#             */
-/*   Updated: 2023/12/13 09:58:20 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/12/13 10:04:29 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void check_duplicates(t_stack *s)
+void	check_duplicates(t_stack *s)
 {
 	int	i;
 	int	j;
@@ -54,49 +54,43 @@ void	init_stacks(t_stack *a, t_stack *b, int argc, char *argv[])
 	check_duplicates(a);
 }
 
-void	mysort(t_stack *a, t_stack *b)
-{
-	int	smallest_elem_idx_a;
-	int	i;
+// void	mysort(t_stack *a, t_stack *b)
+// {
+// 	int	smallest_elem_idx_a;
+// 	int	i;
 
-	while (a->top > -1)
-	{
-		smallest_elem_idx_a = stack_get_smallest_elem_idx(a);
-		if (smallest_elem_idx_a > a->top / 2)
-		{
-			i = smallest_elem_idx_a;
-			while (i < a->top)
-			{
-				ra(a);
-				++i;
-			}
-			pb(a, b);
-		}
-		else
-		{
-			i = smallest_elem_idx_a;
-			while (i >= 0)
-			{
-				rra(a);
-				--i;
-			}
-			pb(a, b);
-		}
-	}
-	while (b->top > -1)
-		pa(a, b);
-}
-
-void	sort2(t_stack *s)
-{
-	if (s->data[1] > s->data[0])
-		sa(s);
-}
+// 	while (a->top > -1)
+// 	{
+// 		smallest_elem_idx_a = stack_get_smallest_elem_idx(a);
+// 		if (smallest_elem_idx_a > a->top / 2)
+// 		{
+// 			i = smallest_elem_idx_a;
+// 			while (i < a->top)
+// 			{
+// 				ra(a);
+// 				++i;
+// 			}
+// 			pb(a, b);
+// 		}
+// 		else
+// 		{
+// 			i = smallest_elem_idx_a;
+// 			while (i >= 0)
+// 			{
+// 				rra(a);
+// 				--i;
+// 			}
+// 			pb(a, b);
+// 		}
+// 	}
+// 	while (b->top > -1)
+// 		pa(a, b);
+// }
 
 /* Sorts stacks with 3 elements. */
-void	sort3(t_stack* s)
+void	sort3(t_stack *s)
 {
-	int largest_elem_idx;
+	int	largest_elem_idx;
 
 	largest_elem_idx = stack_get_largest_elem_idx(s);
 	if (largest_elem_idx == 0)
@@ -111,7 +105,8 @@ void	sort3(t_stack* s)
 			sa(s);
 		return ;
 	}
-	else{
+	else
+	{
 		rra(s);
 		if (s->data[2] > s->data[1])
 			sa(s);
@@ -154,20 +149,16 @@ int	main(int argc, char *argv[])
 	t_stack	b;
 
 	init_stacks(&a, &b, argc, argv);
-
-	// stack_print(&a, "a");
-	// stack_print(&b, "b");
-
 	if (stack_is_sorted_asc(&a))
 		return (0);
 	if (a.top == 1)
-		sort2(&a);
+	{
+		if (a.data[1] > a.data[0])
+			sa(&a);
+	}
 	else if (a.top == 2)
 		sort3(&a);
 	else
 		sort_n(&a, &b, a.top + 1);
-
-	// stack_print(&a, "a");
-	// stack_print(&b, "b");
 	return (0);
 }
