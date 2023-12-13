@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 05:12:06 by tunsal            #+#    #+#             */
-/*   Updated: 2023/12/13 09:53:25 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/12/13 09:55:46 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,62 +118,15 @@ void	sort3(t_stack* s)
 	}
 }
 
-void	sort4(t_stack* a, t_stack* b)
-{
-	int	smallest_idx;
-
-	smallest_idx = stack_get_smallest_elem_idx(a);
-	if (smallest_idx == 0)
-		rra(a);
-	else if (smallest_idx == 1)
-	{
-		ra(a);
-		ra(a);
-	}
-	else if (smallest_idx == 2)
-		ra(a);
-	if (stack_is_sorted_asc(a))
-		return ;
-	pb(a, b);
-	sort3(a);
-	pa(a, b);
-}
-
-void	sort5(t_stack *a, t_stack *b)
-{
-	int	smallest_idx;
-
-	smallest_idx = stack_get_smallest_elem_idx(a);
-	if (smallest_idx == 0)
-		rra(a);
-	else if (smallest_idx == 1)
-	{
-		rra(a);
-		rra(a);
-	}
-	else if (smallest_idx == 2)
-	{
-		ra(a);
-		ra(a);
-	}
-	else if (smallest_idx == 3)
-		ra(a);
-	if (stack_is_sorted_asc(a))
-		return ;
-	pb(a, b);
-	sort4(a, b);
-	pa(a, b);
-}
-
 /* Sort stack a with element count n. */
 void	sort_n(t_stack *a, t_stack *b, int n)
 {
 	int	smallest_idx;
 	int	i;
 
-	if (n == 5)
+	if (n == 3)
 	{
-		sort5(a, b);
+		sort3(a);
 		return ;
 	}
 	smallest_idx = stack_get_smallest_elem_idx(a);
