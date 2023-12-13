@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 05:12:06 by tunsal            #+#    #+#             */
-/*   Updated: 2023/12/13 09:19:09 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/12/13 09:53:25 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,15 +56,15 @@ void	init_stacks(t_stack *a, t_stack *b, int argc, char *argv[])
 
 void	mysort(t_stack *a, t_stack *b)
 {
-	int	largest_elem_idx_a;
+	int	smallest_elem_idx_a;
 	int	i;
 
 	while (a->top > -1)
 	{
-		largest_elem_idx_a = stack_get_smallest_elem_idx(a);
-		if (largest_elem_idx_a > a->top / 2)
+		smallest_elem_idx_a = stack_get_smallest_elem_idx(a);
+		if (smallest_elem_idx_a > a->top / 2)
 		{
-			i = largest_elem_idx_a;
+			i = smallest_elem_idx_a;
 			while (i < a->top)
 			{
 				ra(a);
@@ -74,7 +74,7 @@ void	mysort(t_stack *a, t_stack *b)
 		}
 		else
 		{
-			i = largest_elem_idx_a;
+			i = smallest_elem_idx_a;
 			while (i >= 0)
 			{
 				rra(a);
@@ -85,6 +85,12 @@ void	mysort(t_stack *a, t_stack *b)
 	}
 	while (b->top > -1)
 		pa(a, b);
+}
+
+void	sort2(t_stack *s)
+{
+	if (s->data[1] > s->data[0])
+		sa(s);
 }
 
 /* Sorts stacks with 3 elements. */
@@ -159,6 +165,42 @@ void	sort5(t_stack *a, t_stack *b)
 	pa(a, b);
 }
 
+/* Sort stack a with element count n. */
+void	sort_n(t_stack *a, t_stack *b, int n)
+{
+	int	smallest_idx;
+	int	i;
+
+	if (n == 5)
+	{
+		sort5(a, b);
+		return ;
+	}
+	smallest_idx = stack_get_smallest_elem_idx(a);
+	i = 0;
+	if (smallest_idx > a->top / 2)
+	{
+		while (i < n - smallest_idx - 1)
+		{
+			ra(a);
+			++i;
+		}
+	}
+	else
+	{
+		while (i <= smallest_idx)
+		{
+			rra(a);
+			++i;
+		}
+	}
+	if (stack_is_sorted_asc(a))
+		return ;
+	pb(a, b);
+	sort_n(a, b, n - 1);
+	pa(a, b);
+}
+
 int	main(int argc, char *argv[])
 {
 	t_stack	a;
@@ -172,15 +214,13 @@ int	main(int argc, char *argv[])
 	if (stack_is_sorted_asc(&a))
 		return (0);
 	if (a.top == 1)
-		sa(&a);
+		sort2(&a);
 	else if (a.top == 2)
 		sort3(&a);
 	else if (a.top == 3)
 		sort4(&a, &b);
-	else if (a.top == 4)
-		sort5(&a, &b);
 	else
-		mysort(&a, &b);
+		sort_n(&a, &b, a.top + 1);
 
 	// stack_print(&a, "a");
 	// stack_print(&b, "b");
