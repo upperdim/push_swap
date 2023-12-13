@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 05:12:06 by tunsal            #+#    #+#             */
-/*   Updated: 2023/12/13 09:55:46 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/12/13 09:58:20 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,19 +133,13 @@ void	sort_n(t_stack *a, t_stack *b, int n)
 	i = 0;
 	if (smallest_idx > a->top / 2)
 	{
-		while (i < n - smallest_idx - 1)
-		{
+		while (i++ < n - smallest_idx - 1)
 			ra(a);
-			++i;
-		}
 	}
 	else
 	{
-		while (i <= smallest_idx)
-		{
+		while (i++ <= smallest_idx)
 			rra(a);
-			++i;
-		}
 	}
 	if (stack_is_sorted_asc(a))
 		return ;
@@ -170,8 +164,6 @@ int	main(int argc, char *argv[])
 		sort2(&a);
 	else if (a.top == 2)
 		sort3(&a);
-	else if (a.top == 3)
-		sort4(&a, &b);
 	else
 		sort_n(&a, &b, a.top + 1);
 
