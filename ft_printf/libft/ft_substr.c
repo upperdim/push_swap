@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tunsal <tunsal@student.42heilbronn.de>     +#+  +:+       +#+        */
+/*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 17:54:19 by tunsal            #+#    #+#             */
-/*   Updated: 2023/10/19 15:46:20 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/12/15 14:39:59 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,6 @@ char	*ft_substr(char const *str, unsigned int sub_start_idx, size_t sub_len)
 	{
 		sub = create_empty_string();
 		return (sub);
-	}
-	else if (sub_start_idx < 0)
-	{
-		sub_len -= sub_start_idx;
-		sub_start_idx = 0;
 	}
 	max_available_len = str_len - sub_start_idx;
 	if (sub_len == SIZE_MAX)
