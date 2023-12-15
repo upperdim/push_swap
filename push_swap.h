@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 13:09:04 by tunsal            #+#    #+#             */
-/*   Updated: 2023/11/21 09:16:39 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/12/15 19:09:24 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	stack_push(t_stack *s, int new);
 void	stack_rev_rotate(t_stack *s);
 void	stack_rotate(t_stack *s);
 void	stack_swap(t_stack *s);
+int		stack_is_empty(t_stack *s);
 
 void	pa(t_stack *a, t_stack *b);
 void	pb(t_stack *a, t_stack *b);
