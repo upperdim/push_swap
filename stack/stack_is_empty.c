@@ -1,34 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_get_largest_elem_idx.c                       :+:      :+:    :+:   */
+/*   stack_is_empty.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 08:24:22 by tunsal            #+#    #+#             */
-/*   Updated: 2023/12/15 19:11:45 by tunsal           ###   ########.fr       */
+/*   Created: 2023/12/15 19:08:24 by tunsal            #+#    #+#             */
+/*   Updated: 2023/12/15 19:09:05 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-/* Return index of the largest element in the stack. */
-int		stack_get_largest_elem_idx(t_stack *s)
+/* Return whether stack is empty or not. */
+int	stack_is_empty(t_stack *s)
 {
-	int	largest_elem_idx;
-	int	i;
-
-	if (stack_is_empty(s))
-		exit_error();
-	largest_elem_idx = 0;
-	i = 0;
-	while (i <= s->top)
-	{
-		if (s->data[i] > s->data[largest_elem_idx])
-		{
-			largest_elem_idx = i;
-		}
-		++i;
-	}
-	return (largest_elem_idx);
+	return (s->top == -1);
 }

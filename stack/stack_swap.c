@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 15:13:11 by tunsal            #+#    #+#             */
-/*   Updated: 2023/11/21 09:10:08 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/12/15 19:11:28 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	stack_swap(t_stack *s)
 	{
 		exit_error();
 	}
-	if (s->top < 1)
+	if (stack_is_empty(s))
 		return ;
 	first = stack_pop(s);
 	second = stack_pop(s);
