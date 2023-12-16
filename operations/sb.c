@@ -6,14 +6,14 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 15:22:50 by tunsal            #+#    #+#             */
-/*   Updated: 2023/11/21 08:35:11 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/12/16 16:08:48 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	sb(t_stack *a)
+void	sb(t_stack *b)
 {
-	stack_swap(a);
+	stack_swap(b);
 	ft_printf("sb\n");
 }
