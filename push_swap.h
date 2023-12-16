@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 13:09:04 by tunsal            #+#    #+#             */
-/*   Updated: 2023/12/15 19:09:24 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/12/16 11:04:51 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,22 @@ typedef struct stack {
 	int	data[STACK_SIZE];
 }	t_stack;
 
+/* Sort functions */
+void	sort3(t_stack *s);
+void	sortn(t_stack *a, t_stack *b, int n);
+void	mysort(t_stack *a, t_stack *b);
+
+/* Utility functions */
 int		str_is_numeric(char *s);
+int		arr_min_idx(int *arr, int size);
 void	stack_print(t_stack *s, char *name);
 int		stack_get_smallest_elem_idx(t_stack *s);
 int		stack_get_largest_elem_idx(t_stack *s);
 int		stack_is_sorted_asc(t_stack *s);
+void	stack_move_elem_to_top(t_stack *s, int elem_idx);
 void	exit_error();
 
+/* Basic stack operations */
 int		stack_pop(t_stack *s);
 void	stack_push(t_stack *s, int new);
 void	stack_rev_rotate(t_stack *s);
@@ -40,6 +49,7 @@ void	stack_rotate(t_stack *s);
 void	stack_swap(t_stack *s);
 int		stack_is_empty(t_stack *s);
 
+/* Ecole 42 stack operations */
 void	pa(t_stack *a, t_stack *b);
 void	pb(t_stack *a, t_stack *b);
 void	ra(t_stack *a);
