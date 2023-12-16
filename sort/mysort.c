@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 11:02:42 by tunsal            #+#    #+#             */
-/*   Updated: 2023/12/16 18:13:03 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/12/16 19:35:41 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,11 @@ static void	a_to_b(t_stack *a, t_stack *b, int a_elem_idx, int b_target_idx)
 	pb(a, b);
 }
 
+/* 
+   Create a `costs` array which contain the cost of putting each element in
+   stack a into correct position in stack b. 
+   Indexes in costs array and stack a data array correspond to the same element.
+*/
 static int	*calculate_costs_a(t_stack *a, t_stack *b)
 {
 	int	*costs;
@@ -91,6 +96,10 @@ static int	*calculate_costs_a(t_stack *a, t_stack *b)
 	return (costs);
 }
 
+/* 
+   End part of the sort algorithm where sorted content is 
+   put into stack a correctly.
+*/
 static void	end_correction(t_stack *a, t_stack *b)
 {
 	void	(*a_end_correction_direction_op)(t_stack *s);
