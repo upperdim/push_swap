@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 11:00:39 by tunsal            #+#    #+#             */
-/*   Updated: 2023/12/16 11:08:10 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/12/16 11:49:41 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	sortn(t_stack *a, t_stack *b, int n)
 	}
 	smallest_idx = stack_get_smallest_elem_idx(a);
 	i = 0;
-	stack_move_elem_to_top(a, smallest_idx);
+	stack_move_elem_to_top(a, smallest_idx, 'a');
 	if (stack_is_sorted_asc(a))
 		return ;
 	pb(a, b);
