@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 11:02:42 by tunsal            #+#    #+#             */
-/*   Updated: 2023/12/16 17:48:57 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/12/16 18:13:03 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,26 @@ static void	a_to_b(t_stack *a, t_stack *b, int a_elem_idx, int b_target_idx)
 	pb(a, b);
 }
 
-void	end_correction(t_stack *a, t_stack *b)
+static int	*calculate_costs_a(t_stack *a, t_stack *b)
+{
+	int	*costs;
+	int	tmp_target_idx;
+	int	i;
+
+	costs = (int *) ft_calloc(a->top + 1, sizeof(int));
+	if (costs == NULL)
+		exit_error();
+	i = 0;
+	while (i <= a->top)
+	{
+		tmp_target_idx = find_target_idx(b, a->data[i]);
+		costs[i] = cost_to_top(a, i) + cost_to_top(b, tmp_target_idx) + 1;
+		++i;
+	}
+	return (costs);
+}
+
+static void	end_correction(t_stack *a, t_stack *b)
 {
 	void	(*a_end_correction_direction_op)(t_stack *s);
 	int		i;
@@ -96,25 +115,12 @@ void	mysort(t_stack *a, t_stack *b)
 	int	*costs;
 	int	a_smallest_cost_idx;
 	int	b_target_idx;
-	int	i;
-	int	tmp_target_idx;
 
 	pb(a, b);
 	pb(a, b);
-	// if (b->data[0] > b->data[1])
-	// 	sb(b);
 	while (!stack_is_empty(a))
 	{
-		costs = (int *) ft_calloc(a->top + 1, sizeof(int));
-		if (costs == NULL)
-			exit_error();
-		i = 0;
-		while (i <= a->top)
-		{
-			tmp_target_idx = find_target_idx(b, a->data[i]);
-			costs[i] = cost_to_top(a, i) + cost_to_top(b, tmp_target_idx) + 1;
-			++i;
-		}
+		costs = calculate_costs_a(a, b);
 		a_smallest_cost_idx = arr_min_idx(costs, a->top + 1);
 		b_target_idx = find_target_idx(b, a->data[a_smallest_cost_idx]);
 		a_to_b(a, b, a_smallest_cost_idx, b_target_idx);
