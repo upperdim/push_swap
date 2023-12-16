@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 13:09:04 by tunsal            #+#    #+#             */
-/*   Updated: 2023/12/16 11:04:51 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/12/16 17:51:42 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,12 @@ void	mysort(t_stack *a, t_stack *b);
 /* Utility functions */
 int		str_is_numeric(char *s);
 int		arr_min_idx(int *arr, int size);
+void	arr_print(int *arr, int size, char *name);
 void	stack_print(t_stack *s, char *name);
 int		stack_get_smallest_elem_idx(t_stack *s);
 int		stack_get_largest_elem_idx(t_stack *s);
 int		stack_is_sorted_asc(t_stack *s);
-void	stack_move_elem_to_top(t_stack *s, int elem_idx);
+void	stack_move_elem_to_top(t_stack *s, int elem_idx, char stack_name);
 void	exit_error();
 
 /* Basic stack operations */
