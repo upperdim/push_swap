@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 05:12:06 by tunsal            #+#    #+#             */
-/*   Updated: 2023/12/16 11:07:45 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/12/16 17:54:07 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,9 @@ int	main(int argc, char *argv[])
 	}
 	else if (a.top == 2)
 		sort3(&a);
-	else
+	else if (a.top == 3 || a.top == 4)
 		sortn(&a, &b, a.top + 1);
+	else
+		mysort(&a, &b);
 	return (0);
 }
