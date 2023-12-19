@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 13:09:04 by tunsal            #+#    #+#             */
-/*   Updated: 2023/12/16 17:51:42 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/12/18 16:04:34 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,9 @@ int		stack_get_smallest_elem_idx(t_stack *s);
 int		stack_get_largest_elem_idx(t_stack *s);
 int		stack_is_sorted_asc(t_stack *s);
 void	stack_move_elem_to_top(t_stack *s, int elem_idx, char stack_name);
+int		cost_to_top(t_stack *s, int target_idx);
+int		stack_find_mid_number_idx(t_stack *s);
+int		stack_count_nums_before_mid_num(t_stack *s, int mid_num_idx);
 void	exit_error();
 
 /* Basic stack operations */
