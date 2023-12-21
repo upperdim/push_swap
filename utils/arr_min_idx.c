@@ -6,14 +6,14 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 10:11:39 by tunsal            #+#    #+#             */
-/*   Updated: 2023/12/16 10:14:55 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/12/21 17:35:10 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
 /* Return index of smallest element in `arr`. */
-int	arr_min_idx(int *arr, int size)
+int	arr_min_idx(int *arr, int size, int max_check_idx)
 {
 	int	smallest_elem_idx;
 	int	i;
@@ -22,7 +22,7 @@ int	arr_min_idx(int *arr, int size)
 		exit_error();
 	smallest_elem_idx = 0;
 	i = 0;
-	while (i < size)
+	while (i < size && i < max_check_idx)
 	{
 		if (arr[i] < arr[smallest_elem_idx])
 			smallest_elem_idx = i;

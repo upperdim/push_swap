@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 13:09:04 by tunsal            #+#    #+#             */
-/*   Updated: 2023/12/21 16:00:11 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/12/21 17:42:01 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,6 @@
 
 # include "ft_printf/ft_printf.h"
 
-# ifndef STACK_SIZE
-#  define STACK_SIZE 10000
-# endif
-
 # define STDERR_FD 2
 
 # define RA 101
@@ -26,9 +22,9 @@
 # define RB 103
 # define RRB 104
 
-typedef struct stack {
+typedef struct s_stack {
 	int	top;
-	int	data[STACK_SIZE];
+	int	*data;
 }	t_stack;
 
 /* Sort functions */
@@ -38,7 +34,7 @@ void	mysort(t_stack *a, t_stack *b);
 
 /* Utility functions */
 int		str_is_numeric(char *s);
-int		arr_min_idx(int *arr, int size);
+int		arr_min_idx(int *arr, int size, int max_check_idx);
 void	arr_print(int *arr, int size, char *name);
 void	stack_print(t_stack *s, char *name);
 int		stack_get_smallest_elem_idx(t_stack *s);

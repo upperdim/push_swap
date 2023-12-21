@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 11:02:42 by tunsal            #+#    #+#             */
-/*   Updated: 2023/12/21 15:15:12 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/12/21 17:48:22 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,15 +77,11 @@ static void	b_to_a(t_stack *a, t_stack *b, int b_elem_idx, int a_target_idx)
    stack a into correct position in stack b. 
    Indexes in costs array and stack a data array correspond to the same element.
 */
-static int	*calculate_costs_b(t_stack *a, t_stack *b)
+static void	calculate_costs_b(t_stack *a, t_stack *b, int *costs)
 {
-	int	*costs;
 	int	tmp_target_idx;
 	int	i;
 
-	costs = (int *) ft_calloc(b->top + 1, sizeof(int));
-	if (costs == NULL)
-		exit_error();
 	i = 0;
 	while (i <= b->top)
 	{
@@ -93,7 +89,6 @@ static int	*calculate_costs_b(t_stack *a, t_stack *b)
 		costs[i] = cost_to_top(b, i) + cost_to_top(a, tmp_target_idx) + 1;
 		++i;
 	}
-	return (costs);
 }
 
 /* 
@@ -117,13 +112,13 @@ static void	end_correction(t_stack *a)
 	}
 }
 
-void	mysort(t_stack *a, t_stack *b)
+/*
+   Transfer elements of stack a to stack b. 
+   Elements bigger than the median value will be on top, and rest will be at
+   the bottom half of stack b.
+*/
+void	a_to_b_split_to_2(t_stack *a, t_stack *b, int a_mid_num_idx)
 {
-	int	*costs;
-	int	b_smallest_cost_idx;
-	int	a_target_idx;
-
-	int	a_mid_num_idx = stack_find_mid_number_idx(a);
 	while (!stack_is_empty(a))
 	{
 		if (a->data[a->top] <= a->data[a_mid_num_idx])
@@ -134,15 +129,32 @@ void	mysort(t_stack *a, t_stack *b)
 		else
 			pb(a, b);
 	}
+}
+
+void	mysort(t_stack *a, t_stack *b)
+{
+	int	*costs;
+	int	b_smallest_cost_idx;
+	int	a_target_idx;
+	int	curr_costs_max;
+	int	a_mid_num_idx;
+	
+	a_mid_num_idx = stack_find_mid_number_idx(a);
+	a_to_b_split_to_2(a, b, a_mid_num_idx);
+	costs = (int *) ft_calloc(b->top + 1, sizeof(int));
+	if (costs == NULL)
+		exit_error();
+	curr_costs_max = b->top + 1;
 	pa(a, b);
 	pa(a, b);
 	while (!stack_is_empty(b))
 	{
-		costs = calculate_costs_b(a, b);
-		b_smallest_cost_idx = arr_min_idx(costs, b->top + 1);
+		calculate_costs_b(a, b, costs);
+		b_smallest_cost_idx = arr_min_idx(costs, b->top + 1, curr_costs_max);
 		a_target_idx = find_target_idx(a, b->data[b_smallest_cost_idx]);
 		b_to_a(a, b, b_smallest_cost_idx, a_target_idx);
-		free(costs);
+		--curr_costs_max;
 	}
 	end_correction(a);
+	free(costs);
 }

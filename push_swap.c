@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 05:12:06 by tunsal            #+#    #+#             */
-/*   Updated: 2023/12/18 13:58:45 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/12/21 17:29:16 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,10 @@ void	init_stacks(t_stack *a, t_stack *b, int argc, char *argv[])
 
 	a->top = -1;
 	b->top = -1;
+	a->data = (int *) ft_calloc(argc - 1, sizeof(int));
+	b->data = (int *) ft_calloc(argc - 1, sizeof(int));
+	if (a->data == NULL || b->data == NULL)
+		exit_error();
 	i = 1;
 	while (i < argc)
 	{
@@ -73,5 +77,7 @@ int	main(int argc, char *argv[])
 		sortn(&a, &b, a.top + 1);
 	else
 		mysort(&a, &b);
+	free(a.data);
+	free(b.data);
 	return (0);
 }
