@@ -6,14 +6,14 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 13:09:04 by tunsal            #+#    #+#             */
-/*   Updated: 2023/12/21 15:12:11 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/12/21 16:00:11 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include "ft_printf/ft_printf.h"
+# include "ft_printf/ft_printf.h"
 
 # ifndef STACK_SIZE
 #  define STACK_SIZE 10000
@@ -49,7 +49,7 @@ int		stack_get_rotation_direction(t_stack *s, int elem_idx, char stack_name);
 int		cost_to_top(t_stack *s, int target_idx);
 int		stack_find_mid_number_idx(t_stack *s);
 int		stack_count_nums_before_mid_num(t_stack *s, int mid_num_idx);
-void	exit_error();
+void	exit_error(void);
 
 /* Basic stack operations */
 int		stack_pop(t_stack *s);
