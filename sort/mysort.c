@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 11:02:42 by tunsal            #+#    #+#             */
-/*   Updated: 2023/12/19 19:06:47 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/12/21 15:15:12 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,30 @@ static int	find_target_idx(t_stack *s, int num)
 }
 
 /* 
-   Move element with index `b_elem_idx` in stack `b` 
+   Move element with index `b_elem_idx` in stack `b`
    to the correct position in stack `a`.
 */
 static void	b_to_a(t_stack *a, t_stack *b, int b_elem_idx, int a_target_idx)
 {
+	int	a_rot_dir;
+	int	b_rot_dir;
+
+	a_rot_dir = stack_get_rotation_direction(a, a_target_idx, 'a');
+	b_rot_dir = stack_get_rotation_direction(b, b_elem_idx, 'b');
+	if (a_rot_dir == RA && b_rot_dir == RB)
+		while (!(b_elem_idx == b->top) && !(a_target_idx == a->top))
+		{
+			++b_elem_idx;
+			++a_target_idx;
+			rr(a, b);
+		}
+	else if (a_rot_dir == RRA && b_rot_dir == RRB)
+		while (b_elem_idx >= 0 && a_target_idx >= 0)
+		{
+			--b_elem_idx;
+			--a_target_idx;
+			rrr(a, b);
+		}
 	stack_move_elem_to_top(b, b_elem_idx, 'b');
 	stack_move_elem_to_top(a, a_target_idx, 'a');
 	pa(a, b);
@@ -86,8 +105,6 @@ static void	end_correction(t_stack *a)
 	void	(*a_end_correction_direction_op)(t_stack *s);
 	int		i;
 
-	// while (!stack_is_empty(b))
-	// 	pa(a, b);
 	if (stack_get_smallest_elem_idx(a) < a->top / 2)
 		a_end_correction_direction_op = rra;
 	else
@@ -106,31 +123,25 @@ void	mysort(t_stack *a, t_stack *b)
 	int	b_smallest_cost_idx;
 	int	a_target_idx;
 
-	//int a_pushed_count_before_mid = 0;
 	int	a_mid_num_idx = stack_find_mid_number_idx(a);
-	// int	a_num_cnt_b4_mid_num = stack_count_nums_before_mid_num(a, a_mid_num_idx);
 	while (!stack_is_empty(a))
 	{
-		if (a->data[a->top] > a->data[a_mid_num_idx])
-			pb(a, b);
-		else
+		if (a->data[a->top] <= a->data[a_mid_num_idx])
 		{
 			pb(a, b);
 			rb(b);
 		}
+		else
+			pb(a, b);
 	}
 	pa(a, b);
 	pa(a, b);
 	while (!stack_is_empty(b))
 	{
-		// if (a_pushed_count_before_mid < a_num_cnt_b4_mid_num 
-		// && a->data[a->top] < a->data[a_mid_num_idx])
-		// 	ra(a);
 		costs = calculate_costs_b(a, b);
 		b_smallest_cost_idx = arr_min_idx(costs, b->top + 1);
 		a_target_idx = find_target_idx(a, b->data[b_smallest_cost_idx]);
 		b_to_a(a, b, b_smallest_cost_idx, a_target_idx);
-		// ++a_pushed_count_before_mid;
 		free(costs);
 	}
 	end_correction(a);
