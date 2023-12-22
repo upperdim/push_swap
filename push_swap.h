@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 13:09:04 by tunsal            #+#    #+#             */
-/*   Updated: 2023/12/21 17:42:01 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/12/22 15:50:35 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@
 # define RRB 104
 
 typedef struct s_stack {
-	int	top;
-	int	*data;
+	int				top;
+	int				*data;
+	struct s_stack	*other_stack;
 }	t_stack;
 
 /* Sort functions */
@@ -34,8 +35,9 @@ void	mysort(t_stack *a, t_stack *b);
 
 /* Utility functions */
 int		str_is_numeric(char *s);
-int		arr_min_idx(int *arr, int size, int max_check_idx);
-void	arr_print(int *arr, int size, char *name);
+int		str_contains(char *str, char target);
+int		arr_min_idx(int *arr, int size, int max_check_idx, t_stack *fre_on_err);
+void	arr_print(int *arr, int size, char *name, t_stack *free_on_err);
 void	stack_print(t_stack *s, char *name);
 int		stack_get_smallest_elem_idx(t_stack *s);
 int		stack_get_largest_elem_idx(t_stack *s);
@@ -45,7 +47,7 @@ int		stack_get_rotation_direction(t_stack *s, int elem_idx, char stack_name);
 int		cost_to_top(t_stack *s, int target_idx);
 int		stack_find_mid_number_idx(t_stack *s);
 int		stack_count_nums_before_mid_num(t_stack *s, int mid_num_idx);
-void	exit_error(void);
+void	exit_error(t_stack *s);
 
 /* Basic stack operations */
 int		stack_pop(t_stack *s);

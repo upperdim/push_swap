@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 05:12:06 by tunsal            #+#    #+#             */
-/*   Updated: 2023/12/21 17:29:16 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/12/22 15:53:19 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	check_duplicates(t_stack *s)
 		while (j < s->top)
 		{
 			if (s->data[i] == s->data[j])
-				exit_error();
+				exit_error(s);
 			++j;
 		}
 		++i;
@@ -40,12 +40,14 @@ void	init_stacks(t_stack *a, t_stack *b, int argc, char *argv[])
 	a->data = (int *) ft_calloc(argc - 1, sizeof(int));
 	b->data = (int *) ft_calloc(argc - 1, sizeof(int));
 	if (a->data == NULL || b->data == NULL)
-		exit_error();
+		exit_error(a);
+	a->other_stack = b;
+	b->other_stack = a;
 	i = 1;
 	while (i < argc)
 	{
 		if (!str_is_numeric(argv[i]))
-			exit_error();
+			exit_error(a);
 		stack_push(b, ft_atoi(argv[i]));
 		++i;
 	}

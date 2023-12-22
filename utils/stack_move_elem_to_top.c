@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 10:58:51 by tunsal            #+#    #+#             */
-/*   Updated: 2023/12/16 14:51:29 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/12/22 15:06:36 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	rotate(t_stack *s, char stack_name)
 	else if (stack_name == 'b')
 		rb(s);
 	else
-		exit_error();
+		exit_error(s);
 }
 
 static void	reverse_rotate(t_stack *s, char stack_name)
@@ -29,7 +29,7 @@ static void	reverse_rotate(t_stack *s, char stack_name)
 	else if (stack_name == 'b')
 		rrb(s);
 	else
-		exit_error();
+		exit_error(s);
 }
 
 /* Move elem with `elem_idx` in stack `s` to the top. */

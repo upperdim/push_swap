@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 11:02:42 by tunsal            #+#    #+#             */
-/*   Updated: 2023/12/21 17:48:22 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/12/22 15:04:31 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static int	find_target_idx(t_stack *s, int num)
 	}
 	if (num < s->data[s->top] && num > s->data[0])
 		return (s->top);
-	return (exit_error(), 1337);
+	return (exit_error(s), 1337);
 }
 
 /* 
@@ -143,14 +143,14 @@ void	mysort(t_stack *a, t_stack *b)
 	a_to_b_split_to_2(a, b, a_mid_num_idx);
 	costs = (int *) ft_calloc(b->top + 1, sizeof(int));
 	if (costs == NULL)
-		exit_error();
+		exit_error(a);
 	curr_costs_max = b->top + 1;
 	pa(a, b);
 	pa(a, b);
 	while (!stack_is_empty(b))
 	{
 		calculate_costs_b(a, b, costs);
-		b_smallest_cost_idx = arr_min_idx(costs, b->top + 1, curr_costs_max);
+		b_smallest_cost_idx = arr_min_idx(costs, b->top + 1, curr_costs_max, a);
 		a_target_idx = find_target_idx(a, b->data[b_smallest_cost_idx]);
 		b_to_a(a, b, b_smallest_cost_idx, a_target_idx);
 		--curr_costs_max;

@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 15:13:17 by tunsal            #+#    #+#             */
-/*   Updated: 2023/11/21 09:09:42 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/12/22 15:03:53 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	stack_rotate(t_stack *s)
 
 	if (s == NULL)
 	{
-		exit_error();
+		exit_error(s);
 	}
 	old_top = s->data[s->top];
 	i = s->top;

@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 15:54:30 by tunsal            #+#    #+#             */
-/*   Updated: 2023/12/18 16:12:24 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/12/22 15:06:28 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int		stack_find_mid_number_idx(t_stack *s)
 
 	picked = (int *) ft_calloc(s->top + 1, sizeof(int));
 	if (picked == NULL)
-		exit_error();
+		exit_error(s);
 	i = 0;
 	while (i <= s->top / 2)
 	{

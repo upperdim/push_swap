@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 16:02:49 by tunsal            #+#    #+#             */
-/*   Updated: 2023/12/18 16:07:48 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/12/22 15:06:13 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 int	cost_to_top(t_stack *s, int target_idx)
 {
 	if (target_idx > s->top + 1)
-		exit_error();
+		exit_error(s);
 	if (target_idx == s->top + 1)
 		return (0);
 	if (target_idx >= s-> top / 2)
