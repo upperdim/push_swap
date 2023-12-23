@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 15:54:30 by tunsal            #+#    #+#             */
-/*   Updated: 2023/12/22 15:06:28 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/12/23 21:53:46 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int	get_smallest_available_idx(int	*picked, int size)
 	i = 0;
 	while (i < size)
 	{
-		if (!picked)
+		if (!picked[i])
 			return (i);
 		++i;
 	}
