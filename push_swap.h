@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 13:09:04 by tunsal            #+#    #+#             */
-/*   Updated: 2023/12/24 16:57:44 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/12/24 19:31:41 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ int		stack_get_rotation_direction(t_stack *s, int elem_idx, char stack_name);
 int		cost_to_top(t_stack *s, int target_idx);
 int		stack_find_mid_number_idx(t_stack *s);
 int		stack_count_nums_before_mid_num(t_stack *s, int mid_num_idx);
+int		stack_find_target_idx(t_stack *s, int num);
+void	common_rots(t_stack *a, t_stack *b, int *p_b_elem_i, int *p_a_target_i);
 void	exit_error(t_stack *s);
 
 /* Basic stack operations */

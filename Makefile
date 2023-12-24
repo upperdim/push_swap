@@ -6,7 +6,7 @@
 #    By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/18 02:26:24 by tunsal            #+#    #+#              #
-#    Updated: 2023/12/24 16:51:41 by tunsal           ###   ########.fr        #
+#    Updated: 2023/12/24 19:09:47 by tunsal           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ OPS_FOLDER					= operations
 OPS_SRCS					= $(OPS_FOLDER)/pa.c $(OPS_FOLDER)/pb.c $(OPS_FOLDER)/ra.c $(OPS_FOLDER)/rb.c $(OPS_FOLDER)/rr.c $(OPS_FOLDER)/rra.c $(OPS_FOLDER)/rrb.c $(OPS_FOLDER)/rrr.c $(OPS_FOLDER)/sa.c $(OPS_FOLDER)/sb.c $(OPS_FOLDER)/ss.c
 
 UTILS_FOLDER				= utils
-UTILS_SRCS					= $(UTILS_FOLDER)/str_is_numeric.c $(UTILS_FOLDER)/stack_print.c $(UTILS_FOLDER)/stack_get_smallest_elem_idx.c $(UTILS_FOLDER)/stack_get_largest_elem_idx.c $(UTILS_FOLDER)/stack_is_sorted_asc.c $(UTILS_FOLDER)/exit_error.c $(UTILS_FOLDER)/arr_min_idx.c $(UTILS_FOLDER)/stack_move_elem_to_top.c $(UTILS_FOLDER)/arr_print.c $(UTILS_FOLDER)/stack_cost_to_top.c $(UTILS_FOLDER)/stack_mid_num_utils.c $(UTILS_FOLDER)/stack_get_rotation_direction.c $(UTILS_FOLDER)/double_pa.c $(UTILS_FOLDER)/str_contains.c $(UTILS_FOLDER)/ft_atoi_l.c
+UTILS_SRCS					= $(UTILS_FOLDER)/str_is_numeric.c $(UTILS_FOLDER)/stack_print.c $(UTILS_FOLDER)/stack_get_smallest_elem_idx.c $(UTILS_FOLDER)/stack_get_largest_elem_idx.c $(UTILS_FOLDER)/stack_is_sorted_asc.c $(UTILS_FOLDER)/exit_error.c $(UTILS_FOLDER)/arr_min_idx.c $(UTILS_FOLDER)/stack_move_elem_to_top.c $(UTILS_FOLDER)/arr_print.c $(UTILS_FOLDER)/stack_cost_to_top.c $(UTILS_FOLDER)/stack_mid_num_utils.c $(UTILS_FOLDER)/stack_get_rotation_direction.c $(UTILS_FOLDER)/double_pa.c $(UTILS_FOLDER)/str_contains.c $(UTILS_FOLDER)/ft_atoi_l.c $(UTILS_FOLDER)/stack_find_target_idx.c $(UTILS_FOLDER)/common_rots.c
 
 SORT_FOLDER					= sort
 SORT_SRCS					= $(SORT_FOLDER)/mysort.c $(SORT_FOLDER)/sort3.c $(SORT_FOLDER)/sortn.c

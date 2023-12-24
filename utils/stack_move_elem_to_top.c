@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 10:58:51 by tunsal            #+#    #+#             */
-/*   Updated: 2023/12/22 15:06:36 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/12/24 19:26:14 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,19 @@ void	stack_move_elem_to_top(t_stack *s, int elem_idx, char stack_name)
 
 	i = elem_idx;
 	if (elem_idx >= s-> top / 2)
+	{
 		while (i < s->top)
 		{
 			rotate(s, stack_name);
 			++i;
 		}
+	}
 	else
+	{
 		while (i >= 0)
 		{
 			reverse_rotate(s, stack_name);
 			--i;
 		}
+	}
 }
