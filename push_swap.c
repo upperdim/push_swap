@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 05:12:06 by tunsal            #+#    #+#             */
-/*   Updated: 2023/12/24 17:39:23 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/12/24 18:24:27 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ static void	push_args_to_b(t_stack *b, int argc, char *argv[])
 	while (++i < argc)
 	{
 		splits = ft_split(argv[i], ' ');
-		if (splits == NULL)
+		if (ft_strlen(argv[i]) < 1 || splits == NULL)
 			exit_error(b);
 		j = 0;
 		while (splits[j] != NULL)
