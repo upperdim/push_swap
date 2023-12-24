@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 05:12:06 by tunsal            #+#    #+#             */
-/*   Updated: 2023/12/23 19:46:00 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/12/24 17:39:23 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,13 @@ static void	check_duplicates(t_stack *s)
 	int	j;
 
 	i = 0;
-	while (i <= s->top)
+	while (i < s->top)
 	{
 		j = i + 1;
-		while (j < s->top)
+		while (j <= s->top)
 		{
 			if (s->data[i] == s->data[j])
-			{
 				exit_error(s);
-			}
 			++j;
 		}
 		++i;
@@ -45,7 +43,7 @@ static int	count_arg_nums(t_stack *b, int argc, char *argv[])
 	while (i < argc)
 	{
 		splits = ft_split(argv[i], ' ');
-		if (splits == NULL)
+		if (ft_strlen(argv[i]) < 1 || splits == NULL)
 			exit_error(b);
 		j = 0;
 		while (splits[j] != NULL)
@@ -67,10 +65,10 @@ static void	push_args_to_b(t_stack *b, int argc, char *argv[])
 	int		i;
 	int		j;
 	char	**splits;
-	int		num_to_push;
+	long	num_to_push;
 
-	i = 1;
-	while (i < argc)
+	i = 0;
+	while (++i < argc)
 	{
 		splits = ft_split(argv[i], ' ');
 		if (splits == NULL)
@@ -80,14 +78,14 @@ static void	push_args_to_b(t_stack *b, int argc, char *argv[])
 		{
 			if(!str_is_numeric(splits[j]))
 				exit_error(b);
-			num_to_push = ft_atoi(splits[j]);
-			stack_push(b, num_to_push);
-			free(splits[j]);
-			++j;
+			num_to_push = ft_atoi_l(splits[j]);
+			if (num_to_push < INT_MIN || num_to_push > INT_MAX)
+				exit_error(b);
+			stack_push(b, (int) num_to_push);
+			free(splits[j++]);
 		}
 		free(splits[j]);
 		free(splits);
-		++i;
 	}
 }
 

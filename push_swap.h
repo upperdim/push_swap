@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 13:09:04 by tunsal            #+#    #+#             */
-/*   Updated: 2023/12/22 15:50:35 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/12/24 16:57:44 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "ft_printf/ft_printf.h"
+# include <limits.h>
 
 # define STDERR_FD 2
 
@@ -34,6 +35,7 @@ void	sortn(t_stack *a, t_stack *b, int n);
 void	mysort(t_stack *a, t_stack *b);
 
 /* Utility functions */
+long	ft_atoi_l(const char *str);
 int		str_is_numeric(char *s);
 int		str_contains(char *str, char target);
 int		arr_min_idx(int *arr, int size, int max_check_idx, t_stack *fre_on_err);
