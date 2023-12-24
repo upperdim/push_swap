@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 05:12:06 by tunsal            #+#    #+#             */
-/*   Updated: 2023/12/24 18:24:27 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/12/24 19:15:12 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static int	count_arg_nums(t_stack *b, int argc, char *argv[])
 		j = 0;
 		while (splits[j] != NULL)
 		{
-			if(!str_is_numeric(splits[j]))
+			if (!str_is_numeric(splits[j]))
 				exit_error(b);
 			++num_count;
 			free(splits[j++]);
@@ -76,7 +76,7 @@ static void	push_args_to_b(t_stack *b, int argc, char *argv[])
 		j = 0;
 		while (splits[j] != NULL)
 		{
-			if(!str_is_numeric(splits[j]))
+			if (!str_is_numeric(splits[j]))
 				exit_error(b);
 			num_to_push = ft_atoi_l(splits[j]);
 			if (num_to_push < INT_MIN || num_to_push > INT_MAX)

@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 15:54:30 by tunsal            #+#    #+#             */
-/*   Updated: 2023/12/23 21:53:46 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/12/24 19:14:05 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int	get_smallest_available_idx(int	*picked, int size)
 }
 
 /* Find the index of the middle number when elements are in ascending order. */
-int		stack_find_mid_number_idx(t_stack *s)
+int	stack_find_mid_number_idx(t_stack *s)
 {
 	int	i;
 	int	j;
