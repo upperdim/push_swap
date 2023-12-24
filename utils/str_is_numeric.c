@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 03:44:17 by tunsal            #+#    #+#             */
-/*   Updated: 2023/12/24 17:39:49 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/12/24 18:23:13 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ int	str_is_numeric(char *s)
 	{
 		if (s[i] != '-' && (s[i] < '0' || s[i] > '9'))
 			return (0);
+		if ((encountered_a_num || encountered_sign) && s[i] == '-')
+			return (0);
 		if (s[i] >= '0' && s[i] <= '9')
 			encountered_a_num = 1;
 		if (s[i] == '-')
 			encountered_sign = 1;
-		if ((encountered_a_num || encountered_sign) && s[i] == '-')
-			return (0);
 		++i;
 	}
 	if (!encountered_a_num)
