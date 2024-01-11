@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 13:09:04 by tunsal            #+#    #+#             */
-/*   Updated: 2024/01/11 19:24:43 by tunsal           ###   ########.fr       */
+/*   Updated: 2024/01/11 19:51:07 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	mysort(t_stack *a, t_stack *b);
 long	ft_atoi_l(const char *str);
 int		str_is_numeric(char *s);
 int		str_contains(char *str, char target);
+int		ft_strncmp(char *s1, char *s2, size_t cmp_lim);
 int		arr_min_idx(int *arr, int size, int max_check_idx, t_stack *fre_on_err);
 void	arr_print(int *arr, int size, char *name, t_stack *free_on_err);
 void	stack_print(t_stack *s, char *name);
