@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 13:09:04 by tunsal            #+#    #+#             */
-/*   Updated: 2024/01/11 19:10:38 by tunsal           ###   ########.fr       */
+/*   Updated: 2024/01/11 19:24:43 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ int		stack_count_nums_before_mid_num(t_stack *s, int mid_num_idx);
 int		stack_find_target_idx(t_stack *s, int num);
 void	common_rots(t_stack *a, t_stack *b, int *p_b_elem_i, int *p_a_target_i);
 void	exit_error(t_stack *s);
+void	init_stacks(t_stack *a, t_stack *b, int argc, char *argv[]);
 
 /* Basic stack operations */
 int		stack_pop(t_stack *s);
