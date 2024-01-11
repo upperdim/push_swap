@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 11:02:42 by tunsal            #+#    #+#             */
-/*   Updated: 2023/12/24 19:31:47 by tunsal           ###   ########.fr       */
+/*   Updated: 2024/01/11 19:14:00 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	b_to_a(t_stack *a, t_stack *b, int b_elem_idx, int a_target_idx)
 	common_rots(a, b, &b_elem_idx, &a_target_idx);
 	stack_move_elem_to_top(b, b_elem_idx, 'b');
 	stack_move_elem_to_top(a, a_target_idx, 'a');
-	pa(a, b);
+	pa(a, b, TRUE);
 }
 
 /* 
@@ -49,7 +49,7 @@ static void	calculate_costs_b(t_stack *a, t_stack *b, int *costs)
 */
 static void	end_correction(t_stack *a)
 {
-	void	(*a_end_correction_direction_op)(t_stack *s);
+	void	(*a_end_correction_direction_op)(t_stack *s, int print);
 	int		i;
 
 	if (stack_get_smallest_elem_idx(a) < a->top / 2)
@@ -59,7 +59,7 @@ static void	end_correction(t_stack *a)
 	i = 0;
 	while (i < a->top && !stack_is_sorted_asc(a))
 	{
-		a_end_correction_direction_op(a);
+		a_end_correction_direction_op(a, TRUE);
 		++i;
 	}
 }
@@ -75,11 +75,11 @@ void	a_to_b_split_to_2(t_stack *a, t_stack *b, int a_mid_num_idx)
 	{
 		if (a->data[a->top] <= a->data[a_mid_num_idx])
 		{
-			pb(a, b);
-			rb(b);
+			pb(a, b, TRUE);
+			rb(b, TRUE);
 		}
 		else
-			pb(a, b);
+			pb(a, b, TRUE);
 	}
 }
 
@@ -97,8 +97,8 @@ void	mysort(t_stack *a, t_stack *b)
 	if (costs == NULL)
 		exit_error(a);
 	curr_costs_max = b->top + 1;
-	pa(a, b);
-	pa(a, b);
+	pa(a, b, TRUE);
+	pa(a, b, TRUE);
 	while (!stack_is_empty(b))
 	{
 		calculate_costs_b(a, b, costs);

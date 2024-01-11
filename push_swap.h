@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 13:09:04 by tunsal            #+#    #+#             */
-/*   Updated: 2023/12/24 19:31:41 by tunsal           ###   ########.fr       */
+/*   Updated: 2024/01/11 19:10:38 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@
 # include "ft_printf/ft_printf.h"
 # include <limits.h>
 
+# define TRUE 1
+# define FALSE 0
+
+# define STDIN_FD 0
 # define STDERR_FD 2
 
 # define RA 101
@@ -62,16 +66,16 @@ void	stack_swap(t_stack *s);
 int		stack_is_empty(t_stack *s);
 
 /* Ecole 42 stack operations */
-void	pa(t_stack *a, t_stack *b);
-void	pb(t_stack *a, t_stack *b);
-void	ra(t_stack *a);
-void	rb(t_stack *b);
-void	rr(t_stack *a, t_stack *b);
-void	rra(t_stack *a);
-void	rrb(t_stack *b);
-void	rrr(t_stack *a, t_stack *b);
-void	sa(t_stack *a);
-void	sb(t_stack *a);
-void	ss(t_stack *a, t_stack *b);
+void	pa(t_stack *a, t_stack *b, int print);
+void	pb(t_stack *a, t_stack *b, int print);
+void	ra(t_stack *a, int print);
+void	rb(t_stack *b, int print);
+void	rr(t_stack *a, t_stack *b, int print);
+void	rra(t_stack *a, int print);
+void	rrb(t_stack *b, int print);
+void	rrr(t_stack *a, t_stack *b, int print);
+void	sa(t_stack *a, int print);
+void	sb(t_stack *a, int print);
+void	ss(t_stack *a, t_stack *b, int print);
 
 #endif

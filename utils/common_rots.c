@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 19:06:12 by tunsal            #+#    #+#             */
-/*   Updated: 2023/12/24 19:31:17 by tunsal           ###   ########.fr       */
+/*   Updated: 2024/01/11 19:13:18 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	common_rots(t_stack *a, t_stack *b, int *p_b_elem_i, int *p_a_target_i)
 		{
 			++(*p_b_elem_i);
 			++(*p_a_target_i);
-			rr(a, b);
+			rr(a, b, TRUE);
 		}
 	}
 	else if (a_rot_dir == RRA && b_rot_dir == RRB)
@@ -38,7 +38,7 @@ void	common_rots(t_stack *a, t_stack *b, int *p_b_elem_i, int *p_a_target_i)
 		{
 			--(*p_b_elem_i);
 			--(*p_a_target_i);
-			rrr(a, b);
+			rrr(a, b, TRUE);
 		}
 	}
 }

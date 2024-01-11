@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 20:25:37 by tunsal            #+#    #+#             */
-/*   Updated: 2023/12/24 19:12:52 by tunsal           ###   ########.fr       */
+/*   Updated: 2024/01/11 19:12:40 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 /* Performs pa operation 2 times. */
 void	double_pa(t_stack *a, t_stack *b)
 {
-	pa(a, b);
-	pa(a, b);
+	pa(a, b, TRUE);
+	pa(a, b, TRUE);
 }

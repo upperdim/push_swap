@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 05:12:06 by tunsal            #+#    #+#             */
-/*   Updated: 2023/12/24 19:15:12 by tunsal           ###   ########.fr       */
+/*   Updated: 2024/01/11 19:12:20 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,7 +121,7 @@ int	main(int argc, char *argv[])
 	if (a.top == 1)
 	{
 		if (a.data[1] > a.data[0])
-			sa(&a);
+			sa(&a, TRUE);
 	}
 	else if (a.top == 2)
 		sort3(&a);
