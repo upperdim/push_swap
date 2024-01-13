@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:35:04 by tunsal            #+#    #+#             */
-/*   Updated: 2024/01/13 15:50:42 by tunsal           ###   ########.fr       */
+/*   Updated: 2024/01/13 15:51:20 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 void	exec_cmd(t_stack *a, t_stack *b, char *cmd)
 {
-	ft_printf("cmd = %s$\n", cmd);
 	if (ft_strncmp(cmd, "pa\n", 3) == 0)
 		pa(a, b, FALSE);
 	else if (ft_strncmp(cmd, "pb\n", 3) == 0)
