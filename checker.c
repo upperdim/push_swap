@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 16:35:04 by tunsal            #+#    #+#             */
-/*   Updated: 2024/01/13 15:51:20 by tunsal           ###   ########.fr       */
+/*   Updated: 2024/01/13 15:52:51 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,6 @@ int	main(int argc, char *argv[])
 	if (!stack_is_sorted_asc(&a))
 		ft_printf("KO\n");
 	else
-		ft_printf("OK");
+		ft_printf("OK\n");
 	return (0);
 }
