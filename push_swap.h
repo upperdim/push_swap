@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 13:09:04 by tunsal            #+#    #+#             */
-/*   Updated: 2024/01/11 19:51:07 by tunsal           ###   ########.fr       */
+/*   Updated: 2024/01/13 16:10:50 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ int		stack_get_largest_elem_idx(t_stack *s);
 int		stack_is_sorted_asc(t_stack *s);
 void	stack_move_elem_to_top(t_stack *s, int elem_idx, char stack_name);
 int		stack_get_rotation_direction(t_stack *s, int elem_idx, char stack_name);
+int		stack_get_size(t_stack *s);
 int		cost_to_top(t_stack *s, int target_idx);
 int		stack_find_mid_number_idx(t_stack *s);
 int		stack_count_nums_before_mid_num(t_stack *s, int mid_num_idx);
