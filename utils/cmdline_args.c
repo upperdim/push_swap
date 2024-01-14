@@ -93,6 +93,8 @@ void	init_stacks(t_stack *a, t_stack *b, int argc, char *argv[])
 {
 	int	arg_nums_count;
 
+	a->other_stack = b;
+	b->other_stack = a;
 	a->top = -1;
 	b->top = -1;
 	arg_nums_count = count_arg_nums(b, argc, argv);
@@ -100,8 +102,6 @@ void	init_stacks(t_stack *a, t_stack *b, int argc, char *argv[])
 	b->data = (int *) ft_calloc(arg_nums_count, sizeof(int));
 	if (a->data == NULL || b->data == NULL)
 		exit_error(a);
-	a->other_stack = b;
-	b->other_stack = a;
 	push_args_to_b(b, argc, argv);
 	while (!stack_is_empty(b))
 	{
