@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 15:08:06 by tunsal            #+#    #+#             */
-/*   Updated: 2023/12/21 15:13:36 by tunsal           ###   ########.fr       */
+/*   Updated: 2023/12/24 19:13:41 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,5 @@ int	stack_get_rotation_direction(t_stack *s, int elem_idx, char stack_name)
 			return (RRB);
 	}
 	else
-		return (exit_error(), 1337);
+		return (exit_error(s), 1337);
 }

@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 11:00:49 by tunsal            #+#    #+#             */
-/*   Updated: 2023/12/16 11:00:55 by tunsal           ###   ########.fr       */
+/*   Updated: 2024/01/11 19:11:26 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,20 @@ void	sort3(t_stack *s)
 	largest_elem_idx = stack_get_largest_elem_idx(s);
 	if (largest_elem_idx == 0)
 	{
-		sa(s);
+		sa(s, TRUE);
 		return ;
 	}
 	else if (largest_elem_idx == 2)
 	{
-		ra(s);
+		ra(s, TRUE);
 		if (s->data[2] > s->data[1])
-			sa(s);
+			sa(s, TRUE);
 		return ;
 	}
 	else
 	{
-		rra(s);
+		rra(s, TRUE);
 		if (s->data[2] > s->data[1])
-			sa(s);
+			sa(s, TRUE);
 	}
 }

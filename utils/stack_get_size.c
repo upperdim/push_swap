@@ -1,31 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_print.c                                      :+:      :+:    :+:   */
+/*   stack_get_size.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/18 06:05:18 by tunsal            #+#    #+#             */
-/*   Updated: 2023/12/22 16:32:09 by tunsal           ###   ########.fr       */
+/*   Created: 2024/01/13 16:08:46 by tunsal            #+#    #+#             */
+/*   Updated: 2024/01/13 16:09:58 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	stack_print(t_stack *s, char *name)
+/* Return number of elements present in the stack. */
+int	stack_get_size(t_stack *s)
 {
-	int	i;
-
-	if (name != NULL)
-		ft_printf("%s: ", name);
-	i = 0;
-	while (i < s->top)
-	{
-		ft_printf("%d, ", s->data[i]);
-		++i;
-	}
-	if (s->top >= 0)
-		ft_printf("%d ", s->data[s->top]);
-	ft_printf("<- top (%d)", s->top);
-	ft_putchar('\n');
+	if (s == NULL)
+		exit_error(s);
+	return (s->top + 1);
 }
