@@ -6,7 +6,7 @@
 /*   By: tunsal <tunsal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 03:44:17 by tunsal            #+#    #+#             */
-/*   Updated: 2024/01/13 20:28:50 by tunsal           ###   ########.fr       */
+/*   Updated: 2024/01/15 16:55:20 by tunsal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,17 +42,3 @@ int	str_is_numeric(char *s)
 	}
 	return (1);
 }
-
-// int	main() {
-// 	printf("str_is_numeric(%s) = %s\n", "-2147483650", str_is_numeric("-2147483650") ? "true" : "false");
-// 	printf("str_is_numeric(%s) = %s\n", "-2147483649", str_is_numeric("-2147483649") ? "true" : "false");
-// 	printf("str_is_numeric(%s) = %s\n", "-2147483648", str_is_numeric("-2147483648") ? "true" : "false");
-// 	printf("str_is_numeric(%s) = %s\n", "-2147483647", str_is_numeric("-2147483647") ? "true" : "false");
-// 	printf("str_is_numeric(%s) = %s\n", "-2147483645", str_is_numeric("-2147483645") ? "true" : "false");
-// 	printf("str_is_numeric(%s) = %s\n", "-214748",     str_is_numeric("-214748")     ? "true" : "false");
-// 	printf("str_is_numeric(%s) = %s\n", "0",           str_is_numeric("0")           ? "true" : "false");
-// 	printf("str_is_numeric(%s) = %s\n", "214748",      str_is_numeric("214748")      ? "true" : "false");
-// 	printf("str_is_numeric(%s) = %s\n", "2147483647",  str_is_numeric("2147483647")  ? "true" : "false");
-// 	printf("str_is_numeric(%s) = %s\n", "2147483648",  str_is_numeric("2147483648")  ? "true" : "false");
-// 	printf("str_is_numeric(%s) = %s\n", "a",           str_is_numeric("a")           ? "true" : "false");
-// }
