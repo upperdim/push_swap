@@ -21,7 +21,7 @@ void	stack_rev_rotate(t_stack *s)
 	int	i;
 	int	old_bottom;
 
-	if (s == NULL)
+	if (s == NULL || stack_is_empty(s))
 	{
 		exit_error(s);
 	}
