@@ -16,7 +16,6 @@
 void	sortn(t_stack *a, t_stack *b, int n)
 {
 	int	smallest_idx;
-	int	i;
 
 	if (n == 3)
 	{
@@ -24,7 +23,6 @@ void	sortn(t_stack *a, t_stack *b, int n)
 		return ;
 	}
 	smallest_idx = stack_get_smallest_elem_idx(a);
-	i = 0;
 	stack_move_elem_to_top(a, smallest_idx, 'a');
 	if (stack_is_sorted_asc(a))
 		return ;
