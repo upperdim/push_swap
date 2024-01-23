@@ -43,8 +43,6 @@ static int	count_arg_nums(t_stack *b, int argc, char *argv[])
 	while (i < argc)
 	{
 		splits = ft_split(argv[i], ' ');
-		if (ft_strlen(argv[i]) < 1 || splits == NULL)
-			exit_error(b);
 		j = 0;
 		while (splits[j] != NULL)
 		{
@@ -71,8 +69,6 @@ static void	push_args_to_b(t_stack *b, int argc, char *argv[])
 	while (++i < argc)
 	{
 		splits = ft_split(argv[i], ' ');
-		if (ft_strlen(argv[i]) < 1 || splits == NULL)
-			exit_error(b);
 		j = 0;
 		while (splits[j] != NULL)
 		{
