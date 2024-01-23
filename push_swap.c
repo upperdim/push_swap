@@ -19,8 +19,8 @@ int	main(int argc, char *argv[])
 
 	init_stacks(&a, &b, argc, argv);
 	if (stack_is_sorted_asc(&a))
-		return (0);
-	if (stack_get_size(&a) == 2)
+		;
+	else if (stack_get_size(&a) == 2)
 	{
 		if (a.data[1] > a.data[0])
 			sa(&a, TRUE);
